@@ -1,7 +1,7 @@
 import cv2
 
 def generate_frames():
-    cap = cv2.VideoCapture(0)
+    cap = cv2.VideoCapture(1)
     while True:
         success, frame = cap.read()
         if not success:
