@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Live трансляция</h1>
+    <div class="live-container">
+        <div class="video-container">
+            <img src="{{ url_for('main.video_feed') }}" width="640" height="480">
+        </div>
+        <div class="events-container">
+            <h2>События</h2>
+            <div class="events-list">
+                {% for event in events %}
+                    <div class="event-item">
+                        <span class="event-time">{{ event.timestamp.strftime('%H:%M:%S') }}</span>
+                        <span class="event-name">{{ event.name }}</span>
+                    </div>
+                {% else %}
+                    <p>Событий пока нет</p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
