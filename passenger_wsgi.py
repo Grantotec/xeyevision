@@ -8,4 +8,4 @@ if sys.executable != INTERP:
 
 sys.path.append(os.getcwd())
 
-from app.main import bp
+from run import app
